@@ -1,0 +1,42 @@
+// 产品类
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    get getName() {
+        return this.name;
+    }
+
+    get getPrice() {
+        return this.price;
+    }
+}
+
+// 农场产品类，继承自产品类
+class FarmProduct extends Product {
+    constructor(name, price, isOrganic) {
+        super(name, price);
+        this.isOrganic = isOrganic;
+    }
+
+    get isOrganic() {
+        return this.isOrganic;
+    }
+}
+// 食谱类
+class Recipe {
+    constructor(name, ingredients) {
+        this.name = name;
+        this.ingredients = ingredients;
+    }
+
+    get getName() {
+        return this.name;
+    }
+
+    get getIngredients() {
+        return this.ingredients;
+    }
+}
