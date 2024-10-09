@@ -1,0 +1,61 @@
+// 客户类
+class Customer {
+    constructor(name, phoneNumber, address) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.orderHistory = [];
+    }
+
+    addOrder(order) {
+        this.orderHistory.push(order);
+    }
+
+    get getName() {
+        return this.name;
+    }
+
+    set setName(name) {
+        this.name = name;
+    }
+
+    get getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    set setPhoneNumber(phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    get getAddress() {
+        return this.address;
+    }
+
+    set setAddress(address) {
+        this.address = address;
+    }
+
+    get getOrderHistory() {
+        return this.orderHistory;
+    }
+}
+
+// 订单类
+class Order {
+    constructor(products) {
+        this.products = products;
+        this.totalAmount = this.calculateTotal();
+    }
+
+    calculateTotal() {
+        return this.products.reduce((total, product) => total + product.price, 0);
+    }
+
+    get getProducts() {
+        return this.products;
+    }
+
+    get getTotalAmount() {
+        return this.totalAmount;
+    }
+}
